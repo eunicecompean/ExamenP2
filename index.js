@@ -121,6 +121,23 @@ async function askName() {
   
     return handleAnswer(answers.question_5 === 'My tears ricochet');
   }
+
+  async function question6() {
+    const answers = await inquirer.prompt({
+      name: 'question_6',
+      type: 'list',
+      message: 'What´s my favorite album?\n',
+      choices: [
+        'Evermore',
+        'Romance',
+        'Folklore',
+        'Speak Now',
+      ],
+    });
+  
+    return handleAnswer(answers.question_6 === 'Folklore');
+  }
+
   async function handleAnswer(isCorrect) {
     const spinner = createSpinner('Checking answer...').start();
     await sleep();
